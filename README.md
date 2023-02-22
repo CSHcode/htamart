@@ -261,4 +261,17 @@ public List<Product> getAllProduct(String c_id) {
 }
 ```
 
+## :face_with_head_bandage: Trouble Shooting
+> 
+> :heavy_check_mark: 회원가입시 데이터가 추가된 시간을 입력하려고 했으나 원하는 Date 형식으로 저장되지 않음.
+> * @Temporal 어노테이션을 사용하여 db 에 맞는 Date 형식을 저장.
+>
+> :heavy_check_mark: 깃허브를 사용하여 조원간 파일을 공유할때 필요없는 파일까지 같이 공유가 됨.
+> * gitignore 파일을 사용하여 공유될 필요가 없는 파일은 제외시킴.
+>
+> :heavy_check_mark: 로그인 성공시 그 정보를 서버 어디에 저장시켜 로그인 상태를 유지시킬지 고민.
+> * Model api 를 사용하여 로그인 정보를 저장하여 session 관리
+>
+>
+
 
