@@ -160,7 +160,7 @@ persistence.xml : [persistence.txt](https://github.com/wonuseo/htamart/files/107
 > 
 <br/><br/>
 > ### :mag: 검색 기능
-> <img src="https://user-images.githubusercontent.com/122413012/219260768-fbf78ae7-aea5-4f14-b7d9-c23979c8e08b.PNG" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><img src="https://user-images.githubusercontent.com/122413012/219260797-bf23aa27-a0a5-4673-b05c-eef0affda1f9.PNG" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+> <img src="https://user-images.githubusercontent.com/122413012/219260768-fbf78ae7-aea5-4f14-b7d9-c23979c8e08b.PNG" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img> <img src="https://user-images.githubusercontent.com/122413012/219260797-bf23aa27-a0a5-4673-b05c-eef0affda1f9.PNG" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
 > ```java
 > @Controller
 > @RequestMapping("SearchController")
