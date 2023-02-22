@@ -260,7 +260,8 @@ public List<Product> getAllProduct(String c_id) {
 	}
 }
 ```
-
+<br/><br/>
+	
 ## :face_with_head_bandage: Trouble Shooting
 > 
 > :heavy_check_mark: 회원가입시 데이터가 추가된 시간을 입력하려고 했으나 원하는 Date 형식으로 저장되지 않음.
@@ -270,8 +271,10 @@ public List<Product> getAllProduct(String c_id) {
 > * gitignore 파일을 사용하여 공유될 필요가 없는 파일은 제외시킴.
 >
 > :heavy_check_mark: 로그인 성공시 그 정보를 서버 어디에 저장시켜 로그인 상태를 유지시킬지 고민.
-> * Model api 를 사용하여 로그인 정보를 저장하여 session 관리
+> * Model api 를 사용하여 로그인 정보를 저장하여 session 관리.
 >
+> :heavy_check_mark: form 태그 내에 있는 정보를 바로 controller 로 보내지 않고 jsp 내에서 가공을 한 후 보낼 필요가 있었음.
+> * onClick 함수를 사용하거나 EventHandler 를 사용.
 >
 
 
