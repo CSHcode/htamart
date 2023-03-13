@@ -28,7 +28,7 @@
 <br/><br/>
 
 ## :compass: Setting
-- 이 프로젝트에는 소스코드만 포함되어 있습니다. 추가설정이 필요합니다. <br/>
+- 이 프로젝트에는 소스코드만 포함되어 있습니다. <br/>
 Schema : [Htamall_schema.txt](https://github.com/wonuseo/htamart/files/10752578/Htamall_schema.txt)<br/>
 EntityManagerFactory : [EntityManagerFactory.txt](https://github.com/wonuseo/htamart/files/10752455/EntityManagerFactory.txt)<br/>
 Build Tool (Maven) : [pom.txt](https://github.com/wonuseo/htamart/files/10751738/pom.txt)<br/>
@@ -36,8 +36,8 @@ persistence.xml : [persistence.txt](https://github.com/wonuseo/htamart/files/107
 <br/><br/>
 
 ## :open_book: Summary 
- * 아이디 중복체크를 하지 않으면 회원가입을 할 수 없습니다.
- * 로그인이 성공적으로 진행되면 세션을 유지 시키고, 로그아웃으로 세션을 해제합니다.
+ * 회원가입시 중복된 아이디는 사용할수 없습니다. 회원가입 전 '중복체크' 기능을 사용하여 미리 중복 여부를 확인할수 있습니다. 
+ * 로그인이 성공적으로 진행되면 로그인 정보를 세션에 저장/유지 시키고, 로그아웃으로 세션을 해제합니다.
  * 전체 카테고리와 검색, 슬라이드쇼를 통해 상품목록으로 이동합니다.
  * 추천상품, 상품목록의 이름으로 상품 상세 페이지로 이동합니다.
  * 상세 페이지에서 수량, 바로 구매와 장바구니로 결제 방식을 선택 할 수 있습니다.
