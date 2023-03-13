@@ -2,11 +2,11 @@
 스프링을 이용한 쇼핑몰 사이트 입니다.
 <br/><br/>
 
-## :hourglass: Develop Period
+## :hourglass: 개발 기간
 23.02.01 (09:00) ~ 23.02.16 (16:00)
 <br/><br/>
 
-## :hammer_and_wrench: Tech Stack
+## :hammer_and_wrench: 사용 기술
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
@@ -17,7 +17,7 @@
 ![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
 <br/><br/>
 
-## :runner: Team Member
+## :runner: 참여 인원
 - Joo young Kim
 - Han byeol Kim
 - Won woo Seo
@@ -35,7 +35,7 @@ Build Tool (Maven) : [pom.txt](https://github.com/wonuseo/htamart/files/10751738
 persistence.xml : [persistence.txt](https://github.com/wonuseo/htamart/files/10752469/persistence.txt)<br/>
 <br/><br/>
 
-## :open_book: Summary 
+## :open_book: 프로젝트 요약
  * 회원가입시 중복된 아이디는 사용할수 없습니다. 회원가입 전 '중복체크' 기능을 사용하여 미리 중복 여부를 확인할수 있습니다. 
  * 로그인이 성공적으로 진행되면 로그인 정보를 세션에 저장/유지 시키고, 로그아웃으로 세션을 해제합니다.
  * 전체 카테고리와 검색, 슬라이드쇼를 통해 상품목록으로 이동합니다.
@@ -45,95 +45,23 @@ persistence.xml : [persistence.txt](https://github.com/wonuseo/htamart/files/107
  * 주문/결제 시 자동으로 로그인된 고객의 정보가 들어가며 수정 가능합니다.
 <br/><br/>
 
-## :gear: Main Functions
+## :gear: 주요 기능 
 > ### :slightly_smiling_face: 회원가입/로그인
 >
-> <img src="https://user-images.githubusercontent.com/116073413/224787676-1aac5486-2fb0-4b7b-a978-c5fc0dec84a1.gif" width="100%" height="100%" title="px(픽셀) 크기 설정" alt="RubberDuck"><br/>
-> ```java
-> public void createUser(User user) throws Exception {
->		EntityManager em = DBUtil.getEntityManager();
->		EntityTransaction tx = em.getTransaction();
->		try {
->			tx.begin();
->			user.setUserDate(new Date());
->			em.persist(user);
->			tx.commit();
->		} finally {
->			em.close();
->		}
-> } 
-> public boolean checkId(String userId) throws Exception {
->		EntityManager em = DBUtil.getEntityManager();
->		Long count = null;
->		try {
->			count = em.createQuery("select count(u) from User u where u.userId = :userId", Long.class)
->					.setParameter("userId", userId)
->					.getSingleResult();
->		} finally {
->			em.close();
->		}	
->		return count == 0;
->	}
-> public boolean validateUser(String userId, String userPassword) throws Exception{
->		EntityManager em = DBUtil.getEntityManager();		
->		Long count = null;
->		try {
->			count = em.createQuery("select count(u) from User u where u_id = :u_id and u_password = :u_password", Long.class)
->					.setParameter("u_id", userId)
->					.setParameter("u_password", userPassword)
->					.getSingleResult();		
->		} finally {
->			em.close();			
->		}		
->		return count == 1;
->	}
-> ```
-> <br/><br/>
-> ```js
-> function dedupId() {
->		axios.post('userinfo/dedupId', {}, {
->			params : {
->				u_id : document.getElementById("userId").value
->			}
->		})
->		 .then(function (resData) {
->			 validate(resData['data']);
->		 })
->	}
->	function validate(val) {
->		const userId = document.getElementById("userId").value;	
->		if(userId == ""){
->			alert('아이디를 입력하세요');
->			return;
->		}else if(val == true) {
->			alert('사용가능한 아이디 입니다.')
->			document.getElementById("submit").disabled=false;
->			document.getElementById("userId").readOnly=true;
->		}else {
->			alert('이미 존재하는 아이디 입니다.');
->		}
->	}
->	function login(obj) {
->		axios.post('userinfo/validateUser', {}, {
->			params : {
->				userId : document.getElementById("userId1").value,
->				userPassword : document.getElementById("userPassword1").value
->			}
->		})
->		 .then(function (resData) {
->			 if(resData['data'] == true) {
->				 obj.submit();
->			 }else{
->				 alert('아이디(로그인 전용 아이디) 또는 비밀번호를 잘못 입력했습니다. 입력하신 내용을 다시 확인해주세요.');
->			 }
->		 })
->	}
-> ```
 > <br/>
-> 회원가입/로그인은 하나의 창에서 토글로 구분하고 있습니다.<br/>
-> 첫번째 코드는 회원가입/로그인의 중복체크와 검증의 주요 로직입니다. <br/>
-> 두번쨰 코드로 검증로직을 비동기로 사용하고 있습니다.
+> 우측 상단의 재생버튼을 클릭하세요.
+<img src="https://user-images.githubusercontent.com/116073413/224787676-1aac5486-2fb0-4b7b-a978-c5fc0dec84a1.gif" width="100%" height="100%" title="px(픽셀) 크기 설정" alt="RubberDuck"><br/>
+
+<br/>
+
+> * 회원가입과 로그인은 하나의 창에서 토글로 구분하고 있습니다.<br/>
+> * 회원가입시 중복된 아이디를 미리 확인할 수 있습니다. 중복 확인을 하기 전까지는 '회원가입' 버튼은 비활성화 상태로 유지됩니다. <br/>
+> * 로그인시 틀린 아이디/ 틀린 비밀번호/ 정상 로그인 의 경우의 수를 잡고 있습니다. 
+
+
 <br/><br/>
+
+
 > ### :shopping_cart: 장바구니
 >
 > <img src="https://user-images.githubusercontent.com/116073413/219250849-db93e494-f60a-4baf-aba4-6d2ee5aa3f87.jpg" width="40%" height="40%"/> <img src="https://user-images.githubusercontent.com/116073413/219251506-7acc3f6e-8ad8-4c1d-8539-5c7d2e866da0.jpg" width="40%" height="40%"/>
