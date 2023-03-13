@@ -48,7 +48,7 @@ persistence.xml : [persistence.txt](https://github.com/wonuseo/htamart/files/107
 ## :gear: Main Functions
 > ### :slightly_smiling_face: 회원가입/로그인
 >
-> <img src="https://user-images.githubusercontent.com/87034370/219252111-33d2229b-5933-45fa-8503-1f176f040132.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><img src="https://user-images.githubusercontent.com/87034370/219252141-48091c15-7e04-4248-a7d2-675e67baf24e.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+> <img src="https://user-images.githubusercontent.com/116073413/224787676-1aac5486-2fb0-4b7b-a978-c5fc0dec84a1.gif" width="100%" height="100%" title="px(픽셀) 크기 설정" alt="RubberDuck"><br/>
 > ```java
 > public void createUser(User user) throws Exception {
 >		EntityManager em = DBUtil.getEntityManager();
