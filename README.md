@@ -17,7 +17,7 @@
 ![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
 <br/><br/>
 
-## :runner: Team Memmber
+## :runner: Team Member
 - Joo young Kim
 - Han byeol Kim
 - Won woo Seo
