@@ -3,7 +3,8 @@
 <br/><br/>
 
 ## :hourglass: 개발 기간
-23.02.01 (09:00) ~ 23.02.16 (16:00)
+23.02.01 ~ 23.02.16
+
 <br/><br/>
 
 ## :hammer_and_wrench: 사용 기술
@@ -50,7 +51,7 @@ persistence.xml : [persistence.txt](https://github.com/wonuseo/htamart/files/107
 >
 > <br/>
 > 우측 상단의 재생버튼을 클릭하세요.
-<img src="https://user-images.githubusercontent.com/116073413/224787676-1aac5486-2fb0-4b7b-a978-c5fc0dec84a1.gif" width="100%" height="100%" title="px(픽셀) 크기 설정" alt="RubberDuck"><br/>
+<img src="https://user-images.githubusercontent.com/116073413/224787676-1aac5486-2fb0-4b7b-a978-c5fc0dec84a1.gif" width="100%" height="100%" title="px(픽셀) 크기 설정" alt="RubberDuck">
 
 <br/>
 
@@ -58,137 +59,38 @@ persistence.xml : [persistence.txt](https://github.com/wonuseo/htamart/files/107
 > * 회원가입시 중복된 아이디를 미리 확인할 수 있습니다. 중복 확인을 하기 전까지는 '회원가입' 버튼은 비활성화 상태로 유지됩니다. <br/>
 > * 로그인시 틀린 아이디/ 틀린 비밀번호/ 정상 로그인 의 경우의 수를 잡고 있습니다. 
 
+<br/><br/><br/>
 
-<br/><br/>
+> ### :mag: 검색 기능
+> 
+> <br/>
+> 우측 상단의 재생버튼을 클릭하세요.
+<img src="https://user-images.githubusercontent.com/116073413/224794990-3a52c50f-ce2b-4fb9-b8cf-8ec32f758730.gif" width="100%" height="100%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
 
+<br/>
+
+> * 사용자가 '검색창' 을 사용해 검색을 할 시 검색한 키워드를 SQL에서 like 연산자를 사용해 검색된 단어가 일치한 관련된 상품이 나오게끔 로직을 구현했습니다. <br>
+> * 존재하지 않는 상품이나 잘못된 입력을 통해서 검색을 할 시 사용자에게 "검색하신 상품이 없습니다"라고 응답을 보냅니다.
+> * 상품 분류를 클릭하여 원하는 카테고리의 상품을 조회할 수 있습니다. 
+
+<br/><br/><br/>
 
 > ### :shopping_cart: 장바구니
->
-> <img src="https://user-images.githubusercontent.com/116073413/219250849-db93e494-f60a-4baf-aba4-6d2ee5aa3f87.jpg" width="40%" height="40%"/> <img src="https://user-images.githubusercontent.com/116073413/219251506-7acc3f6e-8ad8-4c1d-8539-5c7d2e866da0.jpg" width="40%" height="40%"/>
->
-> ```java
-> //onload 로 즉시 실행. 장바구니의 길이가 0 이면 상품 주문 버튼 disabled	
->	function cartSize() {
->		if(document.querySelectorAll(".form-checkbox").length == 0) {
->			document.getElementById("input_55").disabled=true;
->		}
->	}
-> //체크가 된 checkbox의 개수가 0 이면 상품 주문 버튼 disabled
->	function checkBox() {
->		 var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
->		 if(checkboxes.length == 0 ) {
->			 document.getElementById("input_55").disabled=true;
->		 }else{
->			 document.getElementById("input_55").disabled=false;
->		 }
->	}
-> ```
-> 사용자가 장바구니에 추가한 품목의 이미지, 수량, 이름, 총 가격을 출력하고, 만약 장바구니에 추가된 품목이 없을 경우, 알맞은 메시지를 출력하고 '상품 주문' 버튼은 비활성화 
-> 됩니다.
 > 
-<br/><br/>
-> ### :mag: 검색 기능
-> <img src="https://user-images.githubusercontent.com/122413012/219260768-fbf78ae7-aea5-4f14-b7d9-c23979c8e08b.PNG" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img> <img src="https://user-images.githubusercontent.com/122413012/219260797-bf23aa27-a0a5-4673-b05c-eef0affda1f9.PNG" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
-> ```java
-> @Controller
-> @RequestMapping("SearchController")
-> public class SearchController {
->	
->	@Autowired
->	private ProductDAO productdao;
->	
->	@GetMapping(value="/productsearch")
->	public ModelAndView getProductSearch(@RequestParam(value = "keyword") String keyword) throws Exception {
->		ModelAndView mv = new ModelAndView();
->		
->		if(keyword != null && keyword.length() != 0) {
->			mv.addObject("productallData", productdao.findElement(keyword));
->		} else {
->			mv.addObject("productallData");
->		}
->		mv.setViewName("list");
->		
->		return mv;  
->	}
->
-> @Repository
-> public class ProductDAO {
->	
->	public List<Product> findElement(String keyword) {
->		EntityManager em = DBUtil.getEntityManager();
->		
->		List<Product> all = null;
->		
->		try {
->			all = em.createQuery("select p from Product p where p.productName like '%" + keyword + "%' ")
->					.getResultList();
->		} finally {
->			em.close();
->		}
->		
->		return all;
->	}
-> ```
-> 사용자가 검색을 할 시 검색한 키워드를 SQL에서 Like 연산자를 사용해 검색된 단어가 일치한 관련된 상품이 나오게끔 로직을 구현했습니다. <br>
-> 존재하지 않는 상품이나 잘못된 입력을 통해서 검색을 할 시 사용자에게 "검색하신 상품이 없습니다"라고 응답을 보냅니다.
- <br/><br/>
->
-### :bread: 리스트 기능
-<img src="https://user-images.githubusercontent.com/113893324/219275831-456eb3eb-e202-4488-bdb1-990724c1c1cd.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+> <br/>
+> 우측 상단의 재생버튼을 클릭하세요.
+<img src="https://user-images.githubusercontent.com/116073413/224799315-0043f934-4821-4980-a565-267d9346ff05.gif" width="100%" height="100%"/>
 
-```java
-@Controller
-@RequestMapping("category")
-public class CategoryController {
-	
-	@Autowired
-	private ProductDAO dao;
-	
-	@GetMapping(value = "/list")
-	public ModelAndView getCategory(@RequestParam("cat") String cat) throws Exception{
-		ModelAndView mv= new ModelAndView();
-		
-		String c_id = null;
-		if(cat.equals("fruit")) {
-			c_id = "1";
-		}else if (cat.equals("vegetable")){
-			c_id ="2";
-		}else if (cat.equals("meat")){
-			c_id ="3";
-		}else if (cat.equals("seafood")){
-			c_id ="4";
-		}
-		
-		List<Product> all = dao.getAllProduct(c_id);
-		
-		mv.addObject("productallData", all);
-		mv.setViewName("list");
-		
-		return mv;
-	}
-}
+<br/>
 
-public class ProductDAO {
+> * 사용자가 장바구니에 추가한 품목의 이미지, 수량, 이름, 총 가격을 출력합니다.
+> * 장바구니에 추가된 상품이 없거나, 장바구니에서 체크박스로 선택한 상품이 없을 경우, '결제하기' 버튼은 비활성화 됩니다. 
 
-public List<Product> getAllProduct(String c_id) {
-		EntityManager em = DBUtil.getEntityManager();
-		
-		Category c = new Category();
-		c.setCategoryId(c_id);
-		
-		List<Product> all = null;
-		try {
-			all = em.createQuery("select p from Product p where p.category = :category")
-					.setParameter("category", c)
-					.getResultList();
-		}finally {
-			em.close();
-		}
-		
-		return all;
-	}
-}
-```
+
+<br/><br/><br/>
+
+
+
 <br/><br/>
 	
 ## :face_with_head_bandage: Trouble Shooting
