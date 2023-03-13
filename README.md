@@ -97,7 +97,7 @@ persistence.xml : [persistence.txt](https://github.com/wonuseo/htamart/files/107
 ## :face_with_head_bandage: Trouble Shooting
 > 
 > :heavy_check_mark: 회원가입시 데이터가 추가된 시간을 입력하려고 했으나 원하는 Date 형식으로 저장되지 않음.
-> * @Temporal 어노테이션을 사용하여 db 에 맞는 Date 형식을 저장.
+> * @Temporal 어노테이션을 사용하여 db 에 맞는 Date 형식을 저장. -> 혹은 LocalDateTime 타입으로 저장하는 방법도 있었음.
 >
 > :heavy_check_mark: 깃허브를 사용하여 조원간 파일을 공유할때 필요없는 파일까지 같이 공유가 됨.
 > * gitignore 파일을 사용하여 공유될 필요가 없는 파일은 제외시킴.
