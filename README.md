@@ -28,12 +28,11 @@
 - Won jun Jung
 <br/><br/>
 
-## :compass: Setting
-- 이 프로젝트에는 소스코드만 포함되어 있습니다. <br/>
-Schema : [Htamall_schema.txt](https://github.com/wonuseo/htamart/files/10752578/Htamall_schema.txt)<br/>
-EntityManagerFactory : [EntityManagerFactory.txt](https://github.com/wonuseo/htamart/files/10752455/EntityManagerFactory.txt)<br/>
-Build Tool (Maven) : [pom.txt](https://github.com/wonuseo/htamart/files/10751738/pom.txt)<br/>
-persistence.xml : [persistence.txt](https://github.com/wonuseo/htamart/files/10752469/persistence.txt)<br/>
+## :compass: ERD
+
+<img src="https://user-images.githubusercontent.com/116073413/225074668-5070ac43-843c-427e-81f7-0801b80ba6dd.jpg" width="100%" height="100%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+
+
 <br/><br/>
 
 ## :open_book: 프로젝트 요약
@@ -90,7 +89,16 @@ persistence.xml : [persistence.txt](https://github.com/wonuseo/htamart/files/107
 
 <br/><br/><br/>
 
+> ### :shopping_cart: 상품 구매
+> 
+> <br/>
+> 우측 상단의 재생버튼을 클릭하세요.
+<img src="https://user-images.githubusercontent.com/116073413/225075032-10da839e-ef84-459d-815d-20a2c6f7e5ae.gif" width="100%" height="100%"/>
 
+<br/>
+
+> * 사용자가 선택한 상품, 수량 정보를 받아 결제 페이지를 출력합니다. 
+> * '약관동의' 체크박스를 체크하지 않으면 '결제하기' 버튼이 작동하지 않습니다. 
 
 <br/><br/>
 	
